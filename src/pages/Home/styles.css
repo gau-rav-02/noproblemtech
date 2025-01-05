@@ -1,0 +1,317 @@
+.home{
+  margin: 0 10rem;
+}
+
+.section {
+  margin-top: 8rem;
+}
+
+.landing-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.slider-image {
+  width: 100%; /* Ensures the image takes the full width of the container */
+  height: 500px; /* Set a fixed height or use max-height if needed */
+  object-fit: fill; /* Ensures the image maintains its aspect ratio while filling the container */
+  border-radius: 10px; /* Optional: Adds rounded corners to the image */
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+
+
+.info {
+  max-width: 40%;
+}
+
+.mid{
+  max-width: 50%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2E186A;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2E186A;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #5A5A5A;
+}
+
+.svg-container {
+  max-width: 60%;
+}
+
+.svg-image {
+  max-width: 100%;
+}
+
+.section.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+  margin: 0; 
+  text-align: center;
+}
+
+.section.center .landing-section {
+  justify-content: center;
+  flex-direction: column; 
+}
+
+.services-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cards grid layout */
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Prevent NavLink from affecting card layout */
+.card-link {
+  text-decoration: none; /* Remove underline from link */
+  display: block; /* Make it block to wrap the whole card */
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #2e186a;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.card-button {
+  background-color: #2e186a;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #4a2f9c;
+}
+
+
+
+/* For devices with a max width of 1024px (tablets and small desktops) */
+@media (max-width: 1024px) {
+  .home {
+    margin: 0 5rem; /* Adjust margins for smaller screens */
+  }
+
+  .landing-section {
+    flex-direction: column; /* Stack items vertically */
+    padding: 1.5rem;
+  }
+
+  .info,
+  .mid {
+    max-width: 100%; /* Full-width for text sections */
+    text-align: center;
+  }
+
+  .svg-container {
+    margin-top: 5rem;
+    max-width: 80%; /* Adjust image size */
+  }
+
+  .section.center {
+    height: auto; /* Allow section to expand */
+    padding: 2rem;
+  }
+
+  .slider-image {
+    height: 400px; /* Adjust height for smaller screens */
+  }
+
+  .custom-arrow {
+    font-size: 1.5rem; /* Smaller arrows for tablets */
+  }
+
+  .last-info{
+    margin-top: 5rem;
+  }
+
+}
+
+/* For devices with a max width of 768px (smartphones in landscape mode) */
+@media (max-width: 768px) {
+  .home {
+    margin: 0 2rem;
+  }
+
+  .landing-section {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .svg-container {
+    margin-top: 5rem;
+    max-width: 70%;
+  }
+
+  .section.center {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .services-grid {
+    flex-direction: column; /* Stack cards vertically */
+  }
+
+  .card {
+    width: 90%; /* Full-width for cards */
+    margin: 1rem auto;
+  }
+
+  .slider-image {
+    height: 350px; /* Further reduce image height for landscape smartphones */
+  }
+
+  .custom-arrow {
+    font-size: 1.2rem; /* Smaller arrows for landscape smartphones */
+  }
+
+  .last-info{
+    margin-top: 5rem;
+  }
+
+}
+
+/* For devices with a max width of 480px (small smartphones in portrait mode) */
+@media (max-width: 480px) {
+  .home {
+    margin: 0 1rem;
+  }
+
+  .landing-section {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .info,
+  .mid {
+    padding: 0 1rem;
+  }
+
+  
+
+  .svg-container {
+    margin-top: 5rem;
+    max-width: 80%;
+  }
+
+  .svg-image{
+    height: 400;
+  }
+
+  .services-grid {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%; /* Full-width cards for small screens */
+  }
+
+  .section {
+    margin-top: 1rem; /* Further reduce top margin on small screens */
+  }
+
+  .slider-image {
+    height: 200px; /* Reduce image height for small screens */
+  }
+
+  .last-info{
+    margin-top: 5rem;
+  }
+}

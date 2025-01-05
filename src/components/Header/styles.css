@@ -1,0 +1,200 @@
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  top: 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Ensure navbar stays above the hamburger menu */
+}
+
+/* Navbar-left styling */
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo styling */
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  z-index: 20; /* Ensure hamburger icon stays above the popup */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s;
+}
+
+/* Navbar-right visibility toggle */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-right a.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.navbar-right a:hover {
+  color: #0056b3;
+}
+
+/* Navbar-right items hide on mobile */
+.navbar-right.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 20vh;
+  background-color: #fff;
+  position: absolute;
+  top: 5rem; /* Space for navbar */
+  left: 0;
+  padding: 10px;
+  z-index: 5; /* Ensure it is below the hamburger icon */
+}
+
+.internship-update {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  background-color: #ff1500;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 15px;
+  animation: blink 3s step-start infinite;
+}
+/* Remove NavLink decoration */
+.no-decoration {
+  text-decoration: none;
+  color: white; /* Keep the text color consistent */
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  75%{
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .navbar-left {
+    flex-direction: column;
+    width: 30%;
+  }
+
+  .navbar-right {
+    width: 50%;
+    display: none;
+    justify-content: flex-end;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Shrink logo and slogan for mobile */
+  .logo {
+    max-width: 80px;
+  }
+
+  .slogan {
+    font-size: 12px;
+  }
+
+  .internship-update {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .navbar-right.open {
+    display: flex;
+  }
+
+  .navbar-right {
+    width: 50%;
+    display: none;
+    justify-content: flex-end;
+  }
+
+  /* Shrink logo and slogan for smaller screens */
+  .logo {
+    max-width: 70px;
+  }
+
+  .slogan {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 60px; /* Further reduce logo size */
+  }
+
+  .slogan {
+    font-size: 8px; /* Further reduce slogan size */
+  }
+
+  .navbar-right a {
+    font-size: 10px; /* Smaller font size for links */
+  }
+}
