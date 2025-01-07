@@ -22,7 +22,7 @@ const Contact = () => {
     formDataToSend.append("name", formData.name);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("message", formData.message);
-    formDataToSend.append("access_key", "YOUR_ACCESS_KEY_HERE"); // Replace with your Web3Forms access key
+    formDataToSend.append("access_key", "9e78d801-155d-48ed-9583-e7140ff6f587"); // Replace with your Web3Forms access key
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
