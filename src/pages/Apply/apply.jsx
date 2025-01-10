@@ -37,8 +37,8 @@ const Apply = () => {
   
     // Admin/Recruiter Email
     const adminEmailPromise = emailjs.send(
-      "service_yv9f6un", // Your Service ID
-      "template_fibwbcm", // Admin Template ID
+      "service_hjr6bko", // Your Service ID
+      "template_3f3a365", // Admin Template ID
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -49,13 +49,13 @@ const Apply = () => {
         jobRole: jobRole,
         type: applicationType,
       },
-      "GewDA4IbNqwn8MEIO" // Your Public Key
+      "m4fOLovbnyInI1XwV" // Your Public Key
     );
   
     // User Confirmation Email
     const userEmailPromise = emailjs.send(
-      "service_yv9f6un", // Your Service ID
-      "template_b9zrgdb", // User Confirmation Template ID
+      "service_hjr6bko", // Your Service ID
+      "template_id7qxb4", // User Confirmation Template ID
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -66,7 +66,7 @@ const Apply = () => {
         jobRole: jobRole,
         type: applicationType,
       },
-      "GewDA4IbNqwn8MEIO" // Your Public Key
+      "m4fOLovbnyInI1XwV" // Your Public Key
     );
   
     // Handle both email promises
