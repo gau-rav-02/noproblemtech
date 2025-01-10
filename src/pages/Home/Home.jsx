@@ -67,16 +67,29 @@ const Home = () => {
                     <div className="slider-container">
                     <Slider {...settings}>
                         <div>
+                        <NavLink to="/">
                         <img src="/img/banner.png" alt="Image 1" className="slider-image" />
+                        </NavLink>
                         </div>
                         <div>
+                        <NavLink to="/career">
                         <img src="/img/internshipp.jpg" alt="Image 2" className="slider-image" />
+                        </NavLink>
                         </div>
                         <div>
+                        <NavLink to="/career">
                         <img src="/img/jop.jpg" alt="Image 3" className="slider-image" />
+                        </NavLink>
                         </div>
                         <div>
+                        <NavLink to="/careercounselling">
                         <img src="/img/counselling.jpg" alt="Image 4" className="slider-image" />
+                        </NavLink>
+                        </div>
+                        <div>
+                        <NavLink to="/multiservice">
+                        <img src="/img/other.jpg" alt="Image 4" className="slider-image" />
+                        </NavLink>
                         </div>
                     </Slider>
                     </div>
@@ -115,7 +128,7 @@ const Home = () => {
                     <Card
                     image="/img/services.jpg"
                     title="Other Services"
-                    description="We provide a wide range of additional services, including IT solutions, software development, and digital marketing."
+                    description="We offer a variety of services to support your growth, including loan options, business growth guidance, startup mentorship, and health insurance."
                     buttonText="Learn More"
                     link="/multiservice"
                     />
@@ -139,7 +152,9 @@ const Home = () => {
             <section className='section'>
                 <div className="landing-section">
                     <div className="svg-container">
-                        <img src="/img/support.png" alt="Coding illustration" className="svg-image" width={400}/>
+                        <NavLink to="/contact">
+                            <img src="/img/support.png" alt="Coding illustration" className="svg-image" width={400}/>
+                        </NavLink>
                     </div>
                     <div className="info last-info">
                         <h1>Comprehensive Support</h1>

@@ -37,8 +37,8 @@ const Apply = () => {
   
     // Admin/Recruiter Email
     const adminEmailPromise = emailjs.send(
-      "service_hjr6bko", // Your Service ID
-      "template_3f3a365", // Admin Template ID
+      "service_yv9f6un", // Your Service ID
+      "template_fibwbcm", // Admin Template ID
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -47,14 +47,15 @@ const Apply = () => {
         interviewDate: formData.interviewDate,
         interviewTime: formData.interviewTime,
         jobRole: jobRole,
+        type: applicationType,
       },
-      "m4fOLovbnyInI1XwV" // Your Public Key
+      "GewDA4IbNqwn8MEIO" // Your Public Key
     );
   
     // User Confirmation Email
     const userEmailPromise = emailjs.send(
-      "service_hjr6bko", // Your Service ID
-      "template_id7qxb4", // User Confirmation Template ID
+      "service_yv9f6un", // Your Service ID
+      "template_b9zrgdb", // User Confirmation Template ID
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -63,8 +64,9 @@ const Apply = () => {
         interviewDate: formData.interviewDate,
         interviewTime: formData.interviewTime,
         jobRole: jobRole,
+        type: applicationType,
       },
-      "m4fOLovbnyInI1XwV" // Your Public Key
+      "GewDA4IbNqwn8MEIO" // Your Public Key
     );
   
     // Handle both email promises
@@ -81,7 +83,7 @@ const Apply = () => {
 
   return (
     <div className="apply-container">
-      <h2>Apply for the {applicationType === "job" ? "Job" : "Internship"}: {jobRole}</h2>
+      <h2>Apply for the {applicationType === "Job" ? "Job" : "Internship"}: {jobRole}</h2>
       <form onSubmit={handleSubmit} className="apply-form">
         <label>
           First Name:

@@ -263,7 +263,7 @@ const Career = () => {
                 <button
                   className="apply-btn"
                   onClick={() =>
-                    window.location.href = `/apply?type=job&role=${encodeURIComponent(
+                    window.location.href = `/apply?type=Job&role=${encodeURIComponent(
                       selectedJob.role
                     )}`
                   }
@@ -294,7 +294,7 @@ const Career = () => {
                 <button
                   className="apply-btn"
                   onClick={() =>
-                    (window.location.href = `/apply?type=internship&role=${encodeURIComponent(
+                    (window.location.href = `/apply?type=Internship&role=${encodeURIComponent(
                       selectedInternship.title
                     )}`)
                   }

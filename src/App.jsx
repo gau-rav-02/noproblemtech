@@ -10,6 +10,7 @@ import Apply from './pages/Apply/apply'
 import CareerCounselling from './pages/CareerCounselling/careercounselling'
 import Multiservice from './pages/Multiservice/multiservice'
 import ScrollToTop from './components/ScrollToTop/scrolltotop'
+import FloatingWhatsapp from './components/FloatingWhatsapp/floatingWhatsapp'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/careercounselling' element={<CareerCounselling/>}/>
         <Route path='/multiservice' element={<Multiservice/>}/>
       </Routes>
+      <FloatingWhatsapp />
       <Footer/>
     </main>
   )

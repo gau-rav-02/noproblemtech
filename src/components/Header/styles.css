@@ -24,6 +24,7 @@
 .logo {
   max-width: 100px;
   height: auto;
+  margin-bottom: -1rem;
 }
 
 /* Hamburger menu styling */
@@ -188,6 +189,7 @@
 @media (max-width: 480px) {
   .logo {
     max-width: 60px; /* Further reduce logo size */
+    margin-bottom: -0.8rem;
   }
 
   .slogan {

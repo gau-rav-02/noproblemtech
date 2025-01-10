@@ -1,0 +1,27 @@
+/* src/components/FloatingWhatsApp/FloatingWhatsApp.css */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .floating-whatsapp:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatsapp-icon {
+    color: white;
+    font-size: 32px;
+  }
+  
