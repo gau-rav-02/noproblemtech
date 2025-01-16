@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-import emailjs from "emailjs-com"; // Use EmailJS for sending emails
-import './styles.css'
+import emailjs from "emailjs-com";
+import './styles.css';
+
+const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const adminTemplateID = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID;
+const userTemplateID = import.meta.env.VITE_EMAILJS_USER_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Apply = () => {
   const [formData, setFormData] = useState({
@@ -14,13 +19,13 @@ const Apply = () => {
 
   const [jobRole, setJobRole] = useState("");
   const [applicationType, setApplicationType] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New state for loading
 
   useEffect(() => {
-    // Extract job role from query parameters
     const queryParams = new URLSearchParams(window.location.search);
     const role = queryParams.get("role");
     const applicationtype = queryParams.get("type");
-    setApplicationType(applicationtype || "Not Specified")
+    setApplicationType(applicationtype || "Not Specified");
     setJobRole(role || "Not Specified");
   }, []);
 
@@ -31,14 +36,12 @@ const Apply = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    // Log form data for debugging
-    console.log(formData);
-  
+    setIsLoading(true); // Set loading to true when the process starts
+
     // Admin/Recruiter Email
     const adminEmailPromise = emailjs.send(
-      "service_hjr6bko", // Your Service ID
-      "template_3f3a365", // Admin Template ID
+      serviceID,
+      adminTemplateID,
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -49,13 +52,13 @@ const Apply = () => {
         jobRole: jobRole,
         type: applicationType,
       },
-      "m4fOLovbnyInI1XwV" // Your Public Key
+      publicKey
     );
-  
+
     // User Confirmation Email
     const userEmailPromise = emailjs.send(
-      "service_hjr6bko", // Your Service ID
-      "template_id7qxb4", // User Confirmation Template ID
+      serviceID,
+      userTemplateID,
       {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -66,10 +69,9 @@ const Apply = () => {
         jobRole: jobRole,
         type: applicationType,
       },
-      "m4fOLovbnyInI1XwV" // Your Public Key
+      publicKey
     );
-  
-    // Handle both email promises
+
     Promise.all([adminEmailPromise, userEmailPromise])
       .then((response) => {
         console.log("SUCCESS!", response);
@@ -78,12 +80,17 @@ const Apply = () => {
       .catch((err) => {
         console.error("FAILED...", err);
         alert("Failed to Submit Application. Please try again.");
+      })
+      .finally(() => {
+        setIsLoading(false); // Reset loading state after completion
       });
   };
 
   return (
     <div className="apply-container">
-      <h2>Apply for the {applicationType === "Job" ? "Job" : "Internship"}: {jobRole}</h2>
+      <h2>
+        Apply for the {applicationType === "Job" ? "Job" : "Internship"}: {jobRole}
+      </h2>
       <form onSubmit={handleSubmit} className="apply-form">
         <label>
           First Name:
@@ -156,8 +163,8 @@ const Apply = () => {
             <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
           </select>
         </label>
-        <button type="submit" className="submit-btn">
-          Submit Application
+        <button type="submit" className="submit-btn" disabled={isLoading}>
+          {isLoading ? "Submitting..." : "Submit Application"}
         </button>
       </form>
     </div>

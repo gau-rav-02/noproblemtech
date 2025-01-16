@@ -19,10 +19,10 @@
 }
 
 .slider-image {
-  width: 100%; /* Ensures the image takes the full width of the container */
-  height: 500px; /* Set a fixed height or use max-height if needed */
-  object-fit: fill; /* Ensures the image maintains its aspect ratio while filling the container */
-  border-radius: 10px; /* Optional: Adds rounded corners to the image */
+  width: 100%; 
+  height: 500px; 
+  object-fit: fill; 
+  border-radius: 10px; 
 }
 
 .custom-arrow {
@@ -109,10 +109,10 @@ p {
   margin-top: 20px;
 }
 
-/* Prevent NavLink from affecting card layout */
+
 .card-link {
-  text-decoration: none; /* Remove underline from link */
-  display: block; /* Make it block to wrap the whole card */
+  text-decoration: none; 
+  display: block;
 }
 
 .card {
@@ -134,7 +134,7 @@ p {
 .card-image {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card-content {
@@ -171,39 +171,39 @@ p {
 
 
 
-/* For devices with a max width of 1024px (tablets and small desktops) */
+
 @media (max-width: 1024px) {
   .home {
-    margin: 0 5rem; /* Adjust margins for smaller screens */
+    margin: 0 5rem; 
   }
 
   .landing-section {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     padding: 1.5rem;
   }
 
   .info,
   .mid {
-    max-width: 100%; /* Full-width for text sections */
+    max-width: 100%; 
     text-align: center;
   }
 
   .svg-container {
     margin-top: 5rem;
-    max-width: 80%; /* Adjust image size */
+    max-width: 80%; 
   }
 
   .section.center {
-    height: auto; /* Allow section to expand */
+    height: auto; 
     padding: 2rem;
   }
 
   .slider-image {
-    height: 400px; /* Adjust height for smaller screens */
+    height: 400px; 
   }
 
   .custom-arrow {
-    font-size: 1.5rem; /* Smaller arrows for tablets */
+    font-size: 1.5rem; 
   }
 
   .last-info{
@@ -212,7 +212,7 @@ p {
 
 }
 
-/* For devices with a max width of 768px (smartphones in landscape mode) */
+
 @media (max-width: 768px) {
   .home {
     margin: 0 2rem;
@@ -241,20 +241,20 @@ p {
   }
 
   .services-grid {
-    flex-direction: column; /* Stack cards vertically */
+    flex-direction: column; 
   }
 
   .card {
-    width: 90%; /* Full-width for cards */
+    width: 90%; 
     margin: 1rem auto;
   }
 
   .slider-image {
-    height: 350px; /* Further reduce image height for landscape smartphones */
+    height: 350px; 
   }
 
   .custom-arrow {
-    font-size: 1.2rem; /* Smaller arrows for landscape smartphones */
+    font-size: 1.2rem; 
   }
 
   .last-info{
@@ -263,7 +263,7 @@ p {
 
 }
 
-/* For devices with a max width of 480px (small smartphones in portrait mode) */
+
 @media (max-width: 480px) {
   .home {
     margin: 0 1rem;
@@ -300,15 +300,15 @@ p {
   }
 
   .card {
-    width: 100%; /* Full-width cards for small screens */
+    width: 100%; 
   }
 
   .section {
-    margin-top: 1rem; /* Further reduce top margin on small screens */
+    margin-top: 1rem; 
   }
 
   .slider-image {
-    height: 200px; /* Reduce image height for small screens */
+    height: 200px; 
   }
 
   .last-info{

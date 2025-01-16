@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa'; // Import the WhatsApp icon
+import { FaWhatsapp } from 'react-icons/fa';
 import './styles.css';
 
 function FloatingWhatsApp() {
-  const phoneNumber = "+918830428998"; // Replace with your WhatsApp number
+  const phoneNumber = "+918830428998"; 
   const whatsappURL = `https://wa.me/${phoneNumber}`;
 
   return (

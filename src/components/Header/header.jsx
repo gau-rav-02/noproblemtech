@@ -31,7 +31,6 @@ const Header = () => {
                     <div className="bar"></div>
                 </div>
 
-                {/* Internships Update on Right Corner */}
                 <div className="internship-update">
                     <NavLink to="/career" className="no-decoration">Internships are available!</NavLink>
                 </div>

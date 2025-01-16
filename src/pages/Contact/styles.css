@@ -1,4 +1,4 @@
-/* General Container Styles */
+
 .contact-container {
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
     line-height: 1.5;
   }
   
-  /* Form Styles */
+  
   .contact-form {
     flex: 1;
   }
@@ -82,12 +82,12 @@
   }
   
 
-  /* Media Queries */
+  
 
-/* For devices with a max width of 1024px (tablets and smaller laptops) */
+
 @media (max-width: 1024px) {
   .contact-content {
-      flex-direction: column; /* Stack the content vertically */
+      flex-direction: column; 
       padding: 1.5rem;
   }
 
@@ -116,7 +116,7 @@
   }
 }
 
-/* For devices with a max width of 768px (smartphones in portrait mode) */
+
 @media (max-width: 768px) {
   .contact-container {
       padding: 1rem;
@@ -146,7 +146,7 @@
   }
 }
 
-/* For devices with a max width of 480px (small smartphones) */
+
 @media (max-width: 480px) {
   .contact-container {
       padding: 0.8rem;

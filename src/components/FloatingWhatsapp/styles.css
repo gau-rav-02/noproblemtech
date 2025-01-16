@@ -1,7 +1,7 @@
-/* src/components/FloatingWhatsApp/FloatingWhatsApp.css */
+
 .floating-whatsapp {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     right: 20px;
     z-index: 10;
     width: 60px;
@@ -25,3 +25,9 @@
     font-size: 32px;
   }
   
+
+  @media (max-width: 480px){
+    .floating-whatsapp{
+      bottom: 20px;
+    }
+  }

@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
     color: #333;
   }
   
-  /* Hero Section */
+  
   .hero-section {
     text-align: center;
     padding: 3rem 1rem;
@@ -28,7 +28,7 @@
     margin: 0 auto;
   }
   
-  /* Mission Section */
+  
   .mission-section {
     padding: 2.5rem 1rem;
   }
@@ -50,7 +50,7 @@
     color: #555;
   }
   
-  /* Team Section */
+ 
   .team-section {
     text-align: center;
     padding: 2.5rem 1rem;

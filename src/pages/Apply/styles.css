@@ -57,3 +57,9 @@
     background-color: #218838;
   }
   
+  .loading {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  

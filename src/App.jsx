@@ -11,6 +11,9 @@ import CareerCounselling from './pages/CareerCounselling/careercounselling'
 import Multiservice from './pages/Multiservice/multiservice'
 import ScrollToTop from './components/ScrollToTop/scrolltotop'
 import FloatingWhatsapp from './components/FloatingWhatsapp/floatingWhatsapp'
+import PrivacyPolicy from './pages/Policies/PrivacyPolicy'
+import SecurityPolicy from './pages/Policies/SecurityPolicy'
+import SoftwarePrinciples from './pages/Policies/SoftwarePrinciples'
 
 function App() {
 
@@ -26,6 +29,9 @@ function App() {
         <Route path='/apply' element={<Apply/>}/>
         <Route path='/careercounselling' element={<CareerCounselling/>}/>
         <Route path='/multiservice' element={<Multiservice/>}/>
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+        <Route path='/security-policy' element={<SecurityPolicy/>}/>
+        <Route path='/software-principles' element={<SoftwarePrinciples/>}/>
       </Routes>
       <FloatingWhatsapp />
       <Footer/>

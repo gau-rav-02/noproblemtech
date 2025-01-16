@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./styles.css";
 
+const web3FromsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [result, setResult] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,27 +18,34 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setIsLoading(true);
 
     const formDataToSend = new FormData();
+    formDataToSend.append("subject", "NPTECH - New Contact Form Submission");
     formDataToSend.append("name", formData.name);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("message", formData.message);
-    formDataToSend.append("access_key", "9e78d801-155d-48ed-9583-e7140ff6f587"); // Replace with your Web3Forms access key
+    formDataToSend.append("access_key", web3FromsAccessKey); // Corrected access key usage
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formDataToSend,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset(); // Clear the form
-    } else {
-      console.log("Error", data);
-      setResult(data.message); // Show error message if submission fails
+      if (data.success) {
+        setIsLoading(false);
+        alert("Form Submitted Successfully!");
+        event.target.reset(); // Reset form fields
+      } else {
+        setIsLoading(false);
+        alert(`Error: ${data.message}`);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      alert("An unexpected error occurred. Please try again later.");
     }
   };
 
@@ -46,7 +55,10 @@ const Contact = () => {
         <div className="contact-info">
           <h1>Contact Form</h1>
           <p>
-            Feel free to reach out to us with any questions, comments, or inquiries. We value your feedback and are here to assist you. Please provide your details and message below, and we will get back to you as soon as possible.
+            Feel free to reach out to us with any questions, comments, or
+            inquiries. We value your feedback and are here to assist you. Please
+            provide your details and message below, and we will get back to you
+            as soon as possible.
           </p>
         </div>
         <form onSubmit={onSubmit} className="contact-form">
@@ -81,15 +93,14 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Your Message"
+              placeholder="Write your message clearly and include all details to help us understand your query."
               required
             ></textarea>
           </div>
           <button type="submit" className="submit-button">
-            Submit
+            {isLoading ? "Sending..." : "Submit"}
           </button>
         </form>
-        <span>{result}</span>
       </div>
     </div>
   );

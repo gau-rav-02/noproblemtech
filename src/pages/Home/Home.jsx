@@ -29,13 +29,13 @@ const PrevArrow = (props) => {
 const Home = () => {
 
     const settings = {
-        dots: false, // Disable navigation dots
-        infinite: true, // Infinite loop of images
-        speed: 500, // Speed of the sliding effect
-        slidesToShow: 1, // Show 1 image at a time
-        slidesToScroll: 1, // Scroll 1 image at a time
-        prevArrow: <PrevArrow />, // Custom previous arrow
-        nextArrow: <NextArrow />, // Custom next arrow
+        dots: false, 
+        infinite: true, 
+        speed: 500,
+        slidesToShow: 1, 
+        slidesToScroll: 1, 
+        prevArrow: <PrevArrow />, 
+        nextArrow: <NextArrow />, 
       };
 
     return(
@@ -119,7 +119,7 @@ const Home = () => {
                     link="/career"
                     />
                     <Card
-                    image="/img/counselling.jpg"
+                    image="/img/counselling-2.jpg"
                     title="Career Counselling"
                     description="Explore your career options with our expert guidance to make informed decisions and achieve your professional goals."
                     buttonText="Learn More"

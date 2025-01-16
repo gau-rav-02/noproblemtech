@@ -17,17 +17,16 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Policy</h4>
           <ul>
-            <li><NavLink to="/application-security" className="footer-navlink">Application Security</NavLink></li>
+          <li><NavLink to="/privacy-policy" className="footer-navlink">Privacy Policy</NavLink></li>
+            <li><NavLink to="/security-policy" className="footer-navlink">Application Security</NavLink></li>
             <li><NavLink to="/software-principles" className="footer-navlink">Software Principles</NavLink></li>
-            <li><NavLink to="/support-center" className="footer-navlink">Support Center</NavLink></li>
-            <li><NavLink to="/customer-support" className="footer-navlink">Customer Support</NavLink></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>Address</h4>
-          <p>Shop No #1 New Manas Arcade</p>
-          <p>SBH Colony</p>
+          <p>Shop No. 1 New Manas Arcade,</p>
+          <p>SBH Colony,</p>
           <p>Aurangabad - 431001</p>
         </div>
 
@@ -76,8 +75,8 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-brand"> &copy; {currentYear} nptech.site - All rights reserved </div>     
         <div className="footer-icons">
-          <a href="#"><i className="fab fa-github"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
+          {/* <a href="#"><i className="fab fa-github"></i></a>
+          <a href="#"><i className="fab fa-twitter"></i></a> */}
           <a href="#"><i className="fab fa-linkedin"></i></a>
           {/* <div className="founder"> Founder: Satish Pawar</div> */}
         </div>
